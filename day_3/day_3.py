@@ -48,13 +48,13 @@ def process_inputs2(inputs, eq):
             result_zero.append("0")
     return ["".join(result_one), "".join(result_zero)]
 
-def find_rating(inputs, ww, qq):
-    common = process_inputs2(inputs, ww)[qq]
+def find_rating(inputs, str_if_equal, index):
+    common = process_inputs2(inputs, str_if_equal)[index]
     for i in range(len(common)):
         inputs = [value for value in inputs if value[i] == common[i]]
         if len(inputs) == 1:
             return inputs[0]
-        common = process_inputs2(inputs, ww)[qq]
+        common = process_inputs2(inputs, str_if_equal)[index]
     return ""
 
 print("life support rating:", int(find_rating(inputs, '1', 0), 2) * int(find_rating(inputs, '0', 1), 2))
