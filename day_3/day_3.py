@@ -13,7 +13,6 @@ def process_inputs(inputs):
     result_zero = []
     for i in range(len(inputs[0])):
         ones = len([1 for k in inputs if k[i] == '1'])
-        #print(ones)
         if (ninputs - ones) > ones:
             result_one.append("0")
             result_zero.append("1")
@@ -24,18 +23,15 @@ def process_inputs(inputs):
 
 inputs = get_inputs()
 results = process_inputs(inputs)
-
 print("power consumption:", int(results[0],2) * int(results[1], 2))
 
 #Part 2
-
 def process_inputs2(inputs, eq):
     ninputs = len(inputs)
     result_one= []
     result_zero = []
     for i in range(len(inputs[0])):
         ones = len([1 for k in inputs if k[i] == '1'])
-        #print(ones)
         if (ninputs - ones) == ones:
             result_one.append(eq)
             result_zero.append(eq)
