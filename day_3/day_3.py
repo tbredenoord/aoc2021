@@ -1,10 +1,6 @@
 def get_inputs():
     with open("day_3/input.txt", "r") as f:
-        inputs = []
-        for i in f:
-            if len(i) == 0:
-                continue
-            inputs.append(i.strip())
+        inputs = [i.strip() for i in f if len(i) > 0]
     return inputs
 
 def process_inputs(inputs):
